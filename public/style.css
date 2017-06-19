@@ -3,3 +3,12 @@ html, body {
   padding: 0;
   width: 100vw;
 }
+
+.jumbotron {
+	background-image: url("/records_background.jpg");
+	min-height: 300px;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
