@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Vinyl : <%= album.title %></title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <script type="text/javascript" src="/script.js"></script>
-</head>
-<body>
+<% include ./partials/header %>
 
-  <h1><%= album.title %></h1>
-  <em>by <%= album.artist %></em>
+<h1><%= album.title %></h1>
+<em>by <%= album.artist %></em>
 
-  <h2>Reviews</h2>
+<h2>Reviews</h2>
 
   <!-- TODO: implement album reviews -->
 
-
-</body>
-</html>
+<% include ./partials/footer %>
