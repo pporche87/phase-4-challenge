@@ -19,6 +19,14 @@ app.get('/', (request, response) => {
   })
 })
 
+app.get('/signup', (request, response) => {
+	response.render('signup')
+})
+
+app.get('/signin', (request, response) => {
+	response.render('signin')
+})
+
 app.get('/albums/:albumID', (request, response) => {
   const albumID = request.params.albumID
 
