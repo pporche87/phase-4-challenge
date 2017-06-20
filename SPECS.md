@@ -65,10 +65,10 @@ Allow users to sign up, sign in, view their profile page, and sign out.
 - [x] __20:__ See the name of the website on the splash page.
 - [x] __20:__ See links to "Sign In" and "Sign Up" on the splash page.
 - [ ] __20:__ Sign up for an account with name, email, and password.
-- [ ] __20:__ Sign in to their account if they already have one.
+- [x] __20:__ Sign in to their account if they already have one.
 - [ ] __20:__ Be redirected to their public profile page after signing in (e.g. "/users/1").
 - [ ] __20:__ On their public profile page, see their name, email, and their join date.
-- [ ] __20:__ See the site-wide header on every page.
+- [x] __20:__ See the site-wide header on every page.
 - [ ] __20:__ See a link to "Profile" and "Sign Out" if they're logged in in the site-wide header.
 - [ ] __20:__ See links to "Sign In" and "Sign Up" if they're logged out in the site-wide header.
 
@@ -105,7 +105,7 @@ Ensure that no invalid data gets saved to the database with validation. Also mak
 
 Users CANNOT save invalid data to the database. You don't need to show error messages to the user for the following.
 
-- [ ] __30:__ Users CANNOT sign up with an email that is already in use.
+- [x] __30:__ Users CANNOT sign up with an email that is already in use.
 - [ ] __30:__ A review's content must not be empty.
 
 A user is authorized to perform certain actions on the site. You don't need to show error messages to the user for the following.
