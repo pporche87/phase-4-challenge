@@ -10,7 +10,6 @@ router.get('/user', (request, response) => {
 
 router.get('/:userId', (request, response) => {
 	const { userId } = request.params
-
 	database.getUserById(userId, (error, result) => {
 		 if (error) { return error }
 		 database.getReviewByUser(userId, (error, reviews) => {

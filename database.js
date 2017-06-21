@@ -47,15 +47,19 @@ const getRecentReviews = function(callback) {
 }
 
 const getReviewByAlbum = function(albumID, callback) {
-	query("SELECT albums.id, albums.title, reviews.created_at, reviews.comments FROM reviews JOIN albums ON reviews.user_id=albums.id ORDER BY created_at DESC WHERE album_id=$1", [albumID], callback)
+	query("SELECT albums.title, reviews.created_at, reviews.comments FROM reviews JOIN user ON reviews.user_id=albums.id ORDER BY created_at DESC WHERE album_id=$1", [albumID], callback)
 }
 
 const getReviewByUser = function(userID, callback) {
-	query("SELECT albums.id, albums.title, reviews.created_at, reviews.comments FROM reviews JOIN albums ON reviews.user_id=albums.id ORDER BY created_at DESC WHERE reviews.user_id=$1", [userID], callback)
+	query("SELECT user_id, comments, created_at FROM reviews WHERE user_id=$1", [userID], callback)
 }
 
 const insertReview = function(albumID, comment, callback) {
 	query("INSERT INTO reviews (user_id, album_id, comments) VALUES (1, $1, $2)", [albumID, comment], callback)
+}
+
+const deleteReview = function(commentID, callback) {
+	query("DELETE FROM reviews WHERE id=$1", [commentID], callback)
 }
 
 
@@ -67,5 +71,6 @@ module.exports = {
 	newUser,
 	getRecentReviews,
 	insertReview,
-	getReviewByUser
+	getReviewByUser,
+	deleteReview
 }

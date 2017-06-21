@@ -16,7 +16,8 @@ CREATE TABLE reviews (
 	id SERIAL,
 	user_id INT NOT NULL,
 	album_id INT NOT NULL,
-	comments VARCHAR(255),
+	comments VARCHAR(255) NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (album_id) REFERENCES albums(id),
 	created_at TIMESTAMP DEFAULT NOW()
+);
