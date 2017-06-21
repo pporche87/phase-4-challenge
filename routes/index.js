@@ -81,6 +81,25 @@ router.get('/albums/:albumID', (request, response) => {
 	})
 })
 
+router.get('/reviews/:albumID', (request, response) => {
+	const albumID = request.params.albumID
+	database.getAlbumsByID(albumID, (error, albums, next) => {
+		if (error) { return next(error) }
+		const album = albums[0]
+		response.render('review', {
+			album: album
+		})
+	})
+})
+
+router.post('/reviews/:albumID', (request, response) => {
+	const albumID = request.params.albumID
+	const comment = { comments } = request.body
+	database.insertReview(albumID, comment.comments, (error) => {
+	})
+	response.redirect(`/albums/${albumID}`)
+})
+
 // const userLoggedIn = (request, response, next) => {
 // 	if (request.isAuthenticated())
 // 		return next()

@@ -5,9 +5,15 @@
 		<img class="img-thumbnail" src="https://u.o0bc.com/avatars/stock/_no-user-image.gif" alt="default_profile">
 	</div>
 	<div class="col-md-8">
-		 <h1><%= profile.name %></h1>
-		 <p>Email: <%= profile.email %></p>
-		 <p>Date Joined: <%= profile.join_date %></p>
+		<div class="container">
+			<h1><%= profile.name %></h1>
+ 		 	<p>Email: <%= profile.email %></p>
+ 		 	<p>Date Joined: <%= profile.join_date %></p>
+		</div>
+		<div>
+			<h1>Reviews</h1>
+			<%= reviews %>
+		</div>
 	</div>
 
 </div>

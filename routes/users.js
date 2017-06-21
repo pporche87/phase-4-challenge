@@ -12,22 +12,16 @@ router.get('/:userId', (request, response) => {
 	const { userId } = request.params
 
 	database.getUserById(userId, (error, result) => {
-		if (error || result.length === 0) {
-			if (!error) {
-				console.log('User does not exist');
-				error = new Error('User does not exist')
-			}
-			response.status(500).render('error', {
-				error: error,
-				isLoggedIn: request.isLoggedIn
-			})
-		} else {
-			response.render('profile', {
-				profile: result[0],
-				isLoggedIn: request.isLoggedIn
-			})
-		}
-	})
+		 if (error) { return error }
+		 database.getReviewByUser(userId, (error, reviews) => {
+			 if (error) { return error }
+			 response.render('profile', {
+ 					profile: result[0],
+ 					reviews: reviews
+ 				})
+		 })
+	 })
 })
+
 
 module.exports = router

@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<div class="container">
+	<h1>New Review for <%= album.title %> </h1>
+	<form action="/reviews/<%= album.id %>" method="POST">
+			<div class="form-group">
+				<input type="text" name="comments">
+			</div>
+			<button class="btn btn-default">Submit</button>
+	</form>
+</div>
+
+
+<% include ./partials/footer %>
