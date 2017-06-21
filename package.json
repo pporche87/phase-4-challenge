@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A community for record enthusiasts to review their favorite albums.",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "start:dev": "nodemon server.js",
     "db:create": "createdb vinyl",
     "db:drop": "dropdb vinyl",

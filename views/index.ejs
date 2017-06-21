@@ -17,6 +17,17 @@
 	</div>
 	<div class="col-md-8">
 		<h2>Recent Reviews</h2>
+		<div>
+			<% reviews.forEach(function(review) { %>
+				<div>
+					<h5><a href="/albums/<%= review.id %>"><%= review.title %></a></h5>
+					<p><%= review.created_at %></p>
+				</div>
+				<div>
+					<p><%= review.comments %></p>
+				</div>
+			<% }) %>
+		</div>
 	</div>
 </div>
 

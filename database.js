@@ -38,9 +38,24 @@ const getUserByEmail = function(userEmail, callback) {
 	query("SELECT * FROM users WHERE email = $1", [userEmail.email], callback)
 }
 
+const newUser = function(name, email, password, callback) {
+	query("INSERT INTO users (name, email, password) VALUES($1, $2, $3)", [name, email, password], callback)
+}
+
+const getRecentReviews = function(callback) {
+	query("SELECT albums.id, albums.title, reviews.created_at, reviews.comments FROM reviews JOIN albums ON reviews.user_id=albums.id ORDER BY created_at DESC LIMIT 3", [], callback)
+}
+
+const getReviewByAlbum = function(albumID, callback) {
+	query("SELECT albums.id, albums.title, reviews.created_at, reviews.comments FROM reviews JOIN albums ON reviews.user_id=albums.id ORDER BY created_at DESC WHERE album_id=$1", [albumID], callback)
+}
+
+
 module.exports = {
   getAlbums,
   getAlbumsByID,
 	getUserById,
-	getUserByEmail
+	getUserByEmail,
+	newUser,
+	getRecentReviews
 }

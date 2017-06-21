@@ -5,6 +5,16 @@
 
 <h2>Reviews</h2>
 
-  <!-- TODO: implement album reviews -->
+<a href="#" class="btn btn-default">Add Review</a>
+
+<div>
+	<% reviews.forEach(function(review) { %>
+		<div>
+			<h5><%= review.title %></h5>
+			<p><%= review.created_at %></p>
+			<p><%= review.comments %></p>
+		</div>
+	<% }) %>
+</div>
 
 <% include ./partials/footer %>
