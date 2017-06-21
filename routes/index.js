@@ -38,9 +38,9 @@ router.get('/signin', (request, response) => {
 router.post('/signin', (request, response) => {
 	const loggedInUser = { id } = request.body
 	database.getUserByEmail(loggedInUser, (request, response) => {
-		console.log(response[0].id)
+		// console.log(response[0].id)
 	})
-	response.redirect('/user/1')
+	response.redirect('/users/1')
 })
 
 router.get('/signup', (request, response) => {
