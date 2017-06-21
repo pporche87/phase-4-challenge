@@ -12,7 +12,15 @@
 		</div>
 		<div>
 			<h1>Reviews</h1>
-			<%= reviews %>
+			<div>
+				<% reviews.forEach(function(review) { %>
+					<div>
+						<h4>album name</h4>
+						<p><%= review.created_at %></p>
+						<p><%= review.comments %> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></p></a> 
+					</div>
+				<% }) %>
+			</div>
 		</div>
 	</div>
 

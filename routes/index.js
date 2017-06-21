@@ -100,6 +100,13 @@ router.post('/reviews/:albumID', (request, response) => {
 	response.redirect(`/albums/${albumID}`)
 })
 
+router.delete('/delete', (request, response) => {
+	database.deleteReview(commentID, (error, next) => {
+		if (error) { return next(error) }
+	})
+	response.redirect('/users/1')
+})
+
 // const userLoggedIn = (request, response, next) => {
 // 	if (request.isAuthenticated())
 // 		return next()
