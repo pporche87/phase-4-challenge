@@ -64,10 +64,10 @@ Allow users to sign up, sign in, view their profile page, and sign out.
 - [x] __20:__ Navigate to "/" and see a basic splash page.
 - [x] __20:__ See the name of the website on the splash page.
 - [x] __20:__ See links to "Sign In" and "Sign Up" on the splash page.
-- [ ] __20:__ Sign up for an account with name, email, and password.
+- [x] __20:__ Sign up for an account with name, email, and password.
 - [x] __20:__ Sign in to their account if they already have one.
-- [ ] __20:__ Be redirected to their public profile page after signing in (e.g. "/users/1").
-- [ ] __20:__ On their public profile page, see their name, email, and their join date.
+- [x] __20:__ Be redirected to their public profile page after signing in (e.g. "/users/1").
+- [x] __20:__ On their public profile page, see their name, email, and their join date.
 - [x] __20:__ See the site-wide header on every page.
 - [ ] __20:__ See a link to "Profile" and "Sign Out" if they're logged in in the site-wide header.
 - [ ] __20:__ See links to "Sign In" and "Sign Up" if they're logged out in the site-wide header.
@@ -80,11 +80,11 @@ Allow users to see albums and leave reviews on them.
 
 **Users can...**
 
-- [ ] __20:__ View all albums on the home page (under "Records").
-- [ ] __20:__ View the most recent 3 reviews on the home page.
-- [ ] __20:__ Click on an album title to go to the album page (e.g. "/albums/1").
-- [ ] __20:__ See the site-wide header on the album page.
-- [ ] __20:__ See the name of the album on the album page.
+- [x] __20:__ View all albums on the home page (under "Records").
+- [x] __20:__ View the most recent 3 reviews on the home page.
+- [x] __20:__ Click on an album title to go to the album page (e.g. "/albums/1").
+- [x] __20:__ See the site-wide header on the album page.
+- [x] __20:__ See the name of the album on the album page.
 - [ ] __20:__ See all reviews for the album on album page sorted by newest first.
 - [ ] __20:__ Use an "Add review" button on the album page to pull up the new review form.
 - [ ] __20:__ Create a new review for an album using the new review form.
