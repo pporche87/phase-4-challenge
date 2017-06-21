@@ -1,6 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 const database = require('../database')
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn()
 const users = require('./users')
 
 const router = express.Router()
@@ -34,12 +35,12 @@ router.get('/signin', (request, response) => {
 	})
 })
 
-router.post('/signin', passport.authenticate('local'), (request, response) => {
+router.post('/signin', (request, response) => {
 	const loggedInUser = { id } = request.body
 	database.getUserByEmail(loggedInUser, (request, response) => {
 		console.log(response[0].id)
 	})
-	response.redirect(`/users/1`)
+	response.redirect('/user/1')
 })
 
 router.get('/signup', (request, response) => {
