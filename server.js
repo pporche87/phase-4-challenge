@@ -35,37 +35,37 @@ passport.deserializeUser((user, done) => {
 
 const app = express()
 
-// passport.use(new LocalStrategy({
-// 	usernameField: 'email',
-// 	passwordField: 'password'
-// },
-// function(email, password, callback) {
-// 	database.getUserByEmail({ email: email }, function(error, user) {
-// 		if (error) {
-// 			return callback(error)
-// 		}
-// 		if (!user[0]) {
-// 			return callback(null, false, { message: 'Incorrect email.' })
-// 		}
-// 		if (user[0].password != password) {
-// 			return callback(null, false, { message: 'Incorrect password.' })
-// 		}
-// 		return callback(null, user[0])
-// 	})
-// }))
-//
-// passport.serializeUser(function(user, callback) {
-// 	callback(null, user.id)
-// })
-//
-// passport.deserializeUser(function(id, callback) {
-// 	database.getUserById(id, function(error, user) {
-// 		if (error) { return callback(error) }
-// 		if (user.length === 0) { return callback(null, null) }
-// 		callback(null, user[0])
-// 		// return callback(error, user)
-// 	})
-// })
+passport.use(new LocalStrategy({
+	usernameField: 'email',
+	passwordField: 'password'
+},
+function(email, password, callback) {
+	database.getUserByEmail({ email: email }, function(error, user) {
+		if (error) {
+			return callback(error)
+		}
+		if (!user[0]) {
+			return callback(null, false, { message: 'Incorrect email.' })
+		}
+		if (user[0].password != password) {
+			return callback(null, false, { message: 'Incorrect password.' })
+		}
+		return callback(null, user[0])
+	})
+}))
+
+passport.serializeUser(function(user, callback) {
+	callback(null, user.id)
+})
+
+passport.deserializeUser(function(id, callback) {
+	database.getUserById(id, function(error, user) {
+		if (error) { return callback(error) }
+		if (user.length === 0) { return callback(null, null) }
+		callback(null, user[0])
+		// return callback(error, user)
+	})
+})
 
 require('ejs')
 app.set('view engine', 'ejs');

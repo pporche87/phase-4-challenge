@@ -38,9 +38,9 @@ router.get('/signin', (request, response) => {
 router.post('/signin', (request, response) => {
 	const loggedInUser = { id } = request.body
 	database.getUserByEmail(loggedInUser, (request, response) => {
-		// console.log(response[0].id)
+		console.log(response[0].id)
 	})
-	response.redirect('/users/1')
+	response.redirect('/users/${1}')
 })
 
 router.get('/signup', (request, response) => {
@@ -96,7 +96,8 @@ router.get('/reviews/:albumID', (request, response) => {
 router.post('/reviews/:albumID', (request, response) => {
 	const albumID = request.params.albumID
 	const comment = { comments } = request.body
-	database.insertReview(albumID, comment.comments, (error) => {
+	database.insertReview(albumID, comment.comments, (error, redirect) => {
+
 	})
 	response.redirect(`/albums/${albumID}`)
 })
